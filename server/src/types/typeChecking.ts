@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {
   MessageModel,
   NameMessageModel,
@@ -43,7 +44,7 @@ export function isTransferMessageModel(
 
 export function isActionMessageModel(
   message: MessageModel
-): message is ActionMessageModel {
+): message is ActionMessageModel  {
   return (
     message.type === MessageType.ACTION &&
     'transferId' in message &&
