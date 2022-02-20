@@ -8,7 +8,7 @@ import { ClientManager, maxSize } from './ClientManager';
 import { isMessageModel } from './types/typeChecking';
 
 // Configuration
-const host = process.env.WS_HOST || '127.0.0.1';
+const host = process.env.WS_HOST || '0.0.0.0';
 const port = parseInt(process.env.WS_PORT) || 5000;
 
 const wss = new WebSocket.Server({ host: host, port: port });

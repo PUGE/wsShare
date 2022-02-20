@@ -57,7 +57,7 @@ describe('ClientManager', () => {
     const clientManager = new ClientManager();
 
     const client1 = new TestClient();
-    client1.remoteAddress = '127.0.0.1';
+    client1.remoteAddress = '0.0.0.0';
     client1.networkName = 'TEST';
     clientManager.addClient(client1);
 
@@ -67,7 +67,7 @@ describe('ClientManager', () => {
     clientManager.addClient(client2);
 
     const client3 = new TestClient();
-    client3.remoteAddress = '127.0.0.1';
+    client3.remoteAddress = '0.0.0.0';
     client3.networkName = 'TEST';
     clientManager.addClient(client3);
 

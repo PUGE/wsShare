@@ -20,7 +20,7 @@ The following variables are used for the configuration:
 
 | Variable          | Default value                  | Description                                                                       |
 | ----------------- | ------------------------------ | --------------------------------------------------------------------------------- |
-| `WS_HOST`         | `127.0.0.1`                    | IP address to bind to.                                                            |
+| `WS_HOST`         | `0.0.0.0`                    | IP address to bind to.                                                            |
 | `WS_PORT`         | `5000`                         | Port to bind to.                                                                  |
 | `WS_BEHIND_PROXY` | `no`                           | Set to `yes` if you want the application to respect the `X-Forwarded-For` header. |
 | `WS_MAX_SIZE`     | `65536`                        | The limit should accommodate preview images (100x100 thumbnails).                 |
