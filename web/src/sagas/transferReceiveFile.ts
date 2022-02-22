@@ -74,7 +74,7 @@ export default function* transferReceiveFile(
 
     const blob = new Blob(buffer);
     const blobUrl = URL.createObjectURL(blob);
-
+    // 发送文件
     dispatch(
       updateTransferAction({
         transferId: transfer.transferId,

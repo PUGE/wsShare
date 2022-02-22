@@ -25,6 +25,7 @@ export interface StateType {
   privateKey?: string;
   noticeText?: string;
   noticeUrl?: string;
+  fileList?: string[];
 }
 
 let initialState: StateType = {
@@ -39,6 +40,7 @@ let initialState: StateType = {
   transfers: [],
   maxSize: 0,
   chat: [],
+  fileList: []
 };
 
 export type StoreType = Store<StateType, ActionModel>;
@@ -162,6 +164,9 @@ function applicationState(state = initialState, action: ActionModel) {
       break;
     case ActionType.ADD_CHAT_ITEM:
       newState.chat = [...newState.chat, action.value as ChatItemModel];
+      break;
+    case ActionType.ADD_FILE_LIST:
+      newState.fileList = action.value as string[];
       break;
     default:
       return state;

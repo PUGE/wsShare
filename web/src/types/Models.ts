@@ -22,6 +22,11 @@ export interface WelcomeMessageModel extends MessageModel {
   noticeUrl?: string;
 }
 
+export interface FILELISTUPDATAMessageModel extends MessageModel {
+  type: MessageType.FILELISTUPDATA;
+  list: string[];
+}
+
 export interface NameMessageModel extends MessageModel {
   type: MessageType.NAME;
   networkName: string;
@@ -125,7 +130,8 @@ export type Message =
   | RTCDescriptionMessageModel
   | RTCCandidateMessageModel
   | ChatMessageModel
-  | EncryptedMessageModel;
+  | EncryptedMessageModel
+  | FILELISTUPDATAMessageModel;
 
 export interface ClientModel {
   clientId: string;

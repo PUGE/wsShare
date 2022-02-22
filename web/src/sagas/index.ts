@@ -44,6 +44,7 @@ import {
   setKeyPairAction,
   setNetworkNameAction,
   addChatItemAction,
+  addFileList,
 } from '../actions/state';
 import { MessageType, ActionMessageActionType } from '../types/MessageType';
 import { title } from '../config';
@@ -65,6 +66,9 @@ function* message(action: ActionModel, dispatch: (action: any) => void) {
       if (networkName && networkName !== '') {
         yield put(setNetworkNameAction(networkName));
       }
+      break;
+    case MessageType.FILELISTUPDATA:
+      yield put(addFileList(msg.list));
       break;
     case MessageType.TRANSFER:
       const transfer: TransferModel = {
@@ -143,7 +147,7 @@ function* message(action: ActionModel, dispatch: (action: any) => void) {
             if (msg.clientId) {
               json.clientId = msg.clientId;
             }
-
+            console.log(json)
             yield put(messageAction(json));
           }
         } catch {}
@@ -166,9 +170,9 @@ function* prepareMessage(action: ActionModel) {
       try {
         const payload: string = yield call(
           async () =>
+            // 加密
             await RSA.encryptString(target.publicKey, JSON.stringify(msg))
         );
-
         const message: EncryptedMessageModel = {
           type: MessageType.ENCRYPTED,
           targetId: msg.targetId,
