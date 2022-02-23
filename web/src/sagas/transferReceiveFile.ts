@@ -74,7 +74,6 @@ export default function* transferReceiveFile(
 
     const blob = new Blob(buffer);
     const blobUrl = URL.createObjectURL(blob);
-
     dispatch(
       updateTransferAction({
         transferId: transfer.transferId,

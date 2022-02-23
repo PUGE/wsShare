@@ -175,4 +175,8 @@ export class ClientManager {
       }
     });
   }
+
+  getClientsList() {
+    return this.clients
+  }
 }
