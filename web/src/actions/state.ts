@@ -115,6 +115,13 @@ export function addChatItemAction(item: ChatItemModel): ActionModel {
   };
 }
 
+export function addFileList(item: string[]): ActionModel {
+  return {
+    type: ActionType.ADD_FILE_LIST,
+    value: item,
+  };
+}
+
 export function sendChatMessageAction(message: string): ActionModel {
   return {
     type: ActionType.SEND_CHAT_MESSAGE,

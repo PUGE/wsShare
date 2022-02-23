@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { StateType } from '../reducers';
 import TransferList from './TransferList';
 import Network from './Network';
+import Disk from './Disk';
 
 const TransfersSection: React.FC = () => {
   const clientColor = useSelector((store: StateType) => store.clientColor);
@@ -12,6 +13,8 @@ const TransfersSection: React.FC = () => {
 
   return (
     <div>
+      <h2>共享云盘</h2>
+      <Disk/>
       <h2>文件共享</h2>
       {!!noticeText && (
         <div className="subsection notice">
